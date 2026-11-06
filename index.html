@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Actividad 4 - CodeFlow Solutions</title>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<style>
+  :root { --azul:#1f3864; --gris:#555; }
+  * { box-sizing: border-box; }
+  body { font-family: Arial, Helvetica, sans-serif; color:#222; max-width:800px; margin:0 auto; padding:30px; line-height:1.5; }
+  h1 { color:var(--azul); border-bottom:3px solid var(--azul); padding-bottom:8px; }
+  h2 { color:var(--azul); margin-top:28px; }
+  .equipo { font-size:1.05em; color:var(--gris); margin-bottom:10px; }
+  table { border-collapse:collapse; width:100%; margin:10px 0; }
+  th, td { border:1px solid #bbb; padding:8px 10px; text-align:left; }
+  th { background:var(--azul); color:#fff; }
+  ul { margin:8px 0; }
+  .qr-box { text-align:center; margin:20px 0; }
+  #qrcode { display:inline-block; padding:12px; background:#fff; border:1px solid #ccc; }
+  .enlace { font-size:0.9em; color:var(--gris); word-break:break-all; }
+  .frase { background:#eef2fa; border-left:4px solid var(--azul); padding:12px 16px; border-radius:4px; }
+  .noprint { text-align:center; margin:24px 0; }
+  button { background:var(--azul); color:#fff; border:none; padding:12px 24px; font-size:1em; border-radius:6px; cursor:pointer; }
+  @media print { .noprint { display:none; } body { padding:0; } }
+</style>
+</head>
+<body>
+
+<div class="noprint">
+  <button onclick="window.print()">Imprimir / Guardar como PDF</button>
+</div>
+
+<h1>Ficha de incorporación — CodeFlow Solutions, S.L.</h1>
+<p class="equipo"><strong>Guía rápida para nuevos desarrolladores</strong><br>
+Equipo: José Antonio · Nacho · Alonso · Guillermo</p>
+
+<h2>1. ¿A quién aviso según la incidencia?</h2>
+<table>
+  <tr><th>Tipo de incidencia</th><th>Persona de contacto</th><th>Cómo avisar</th></tr>
+  <tr><td>Error de código / bug</td><td>Nacho (modelos y lógica)</td><td>Canal del equipo</td></tr>
+  <tr><td>Fallo de servidor o despliegue</td><td>José Antonio (migraciones y BD)</td><td>Mensaje directo + ticket</td></tr>
+  <tr><td>Duda de diseño o interfaz</td><td>Guillermo (front)</td><td>Canal de diseño</td></tr>
+  <tr><td>Dudas generales / organización</td><td>Alonso (coordinación)</td><td>Reunión diaria</td></tr>
+</table>
+
+<h2>2. ¿Dónde está la documentación?</h2>
+<ul>
+  <li><strong>README</strong> del repositorio: cómo arrancar el proyecto.</li>
+  <li><strong>Carpeta de Drive:</strong> manuales, actas y diseño.</li>
+  <li><strong>Wiki</strong> del repositorio: guías técnicas y decisiones.</li>
+</ul>
+
+<h2>3. ¿Qué herramientas usamos?</h2>
+<ul>
+  <li>Visual Studio Code (editor)</li>
+  <li>Git + GitHub (control de versiones)</li>
+  <li>Laravel / PHP (framework)</li>
+  <li>MySQL (base de datos)</li>
+  <li>Canal del equipo (Slack / Teams)</li>
+  <li>Trello (tareas)</li>
+</ul>
+
+<h2>4. ¿Cuál es el repositorio de trabajo?</h2>
+<ul>
+  <li>URL: https://github.com/AlonsoG7/kirorepo</li>
+  <li>Rama principal: main</li>
+  <li>Flujo: cada persona en su rama, cambios con Pull Request.</li>
+</ul>
+
+<div class="qr-box">
+  <h2>Escanea el recurso</h2>
+  <div id="qrcode"></div>
+  <p class="enlace" id="urltxt"></p>
+</div>
+
+<h2>Tarea 2 — Inclusión digital (Opción C)</h2>
+<p class="frase">
+  "Incorporamos esta medida porque <strong>no todos tienen un ordenador potente ni buena conexión, y queremos que cualquiera pueda usar la app desde el móvil</strong> y en nuestra aplicación se aplica de esta manera: <strong>hacemos que la web funcione bien en pantallas pequeñas y usamos un lenguaje claro y sencillo para que se entienda sin saber de informática</strong>."
+</p>
+
+<script>
+  // Cambia esta URL por el enlace real de tu recurso.
+  var RECURSO = "https://alonsog7.github.io/ipe/";
+  document.getElementById("urltxt").textContent = RECURSO;
+  new QRCode(document.getElementById("qrcode"), { text: RECURSO, width: 200, height: 200 });
+</script>
+
+</body>
+</html>
